@@ -9,27 +9,10 @@ namespace Add.ons.Web.Services
         {
             _aplikasi = new List<Aplikasi>
             {
-                new Aplikasi(1, "Title", "Bootcamp alkademi"),
-                new Aplikasi(2, "Title 1", "Bootcamp alkademi"),
-                new Aplikasi(3, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
-                new Aplikasi(4, "Title 2", "Bootcamp alkademi"),
+                new Aplikasi(1, "Add ons", "Add ons for browser"),
+                new Aplikasi(2, "Add ons 1", "Add ons for browser"),
+                new Aplikasi(3, "Add ons 2", "Add ons for browser"),
+                new Aplikasi(4, "Add ons 2", "Add ons for browser"),
             };
         }
         public int Add(AplikasiViewModel request)
