@@ -1,0 +1,41 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: #f5f5f5;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.category-text{
+  font-weight: 800;
+}
+.popular-text {
+  padding-top: 30px;
+  font-weight: 700;
+}
+.main{
+  margin-top: 30px;
+}
+.main img{
+  max-width: 70%;
+  margin: 10px auto;
+}

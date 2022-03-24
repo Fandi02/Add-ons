@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Add.ons.Web.Models.Aplikasi>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    @* Column 1 *@
+    <div class="row g-0">
+        <div class="col-4 col-md-4 p-5">
+            <div id="list-example" class="list-group">
+                <p class="category-text">Category</p>
+                <a class="list-group-item list-group-item-action" href="#home">Home</a>
+                <a class="list-group-item list-group-item-action" href="#blog">Blogging</a>
+                <a class="list-group-item list-group-item-action" href="#dev">Developer tools</a>
+                <a class="list-group-item list-group-item-action" href="#com">Communication</a>
+                <a class="list-group-item list-group-item-action" href="#social">Social</a>
+            </div>
+        </div>
+
+        @* Column 2 *@
+        <div class="col-sm-8 col-md-8">
+            <h2 class="popular-text" id="home">Most Popular</h2>
+            <section class="main">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="card h-100">
+                            <img src="@item.LinkImage" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Title</h5>
+                                <p class="card-text">@item.Desc</p>
+                            </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+
+            <h2 class="popular-text" id="blog">Blogging</h2>
+            <section class="main">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="card h-100">
+                            <img src="@item.LinkImage" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Title</h5>
+                                <p class="card-text">@item.Desc</p>
+                            </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+
+            <h2 class="popular-text" id="dev">Developer tools</h2>
+            <section class="main">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="card h-100">
+                            <img src="@item.LinkImage" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Title</h5>
+                                <p class="card-text">@item.Desc</p>
+                            </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+
+            <h2 class="popular-text" id="com">Communication</h2>
+            <section class="main">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="card h-100">
+                            <img src="@item.LinkImage" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Title</h5>
+                                <p class="card-text">@item.Desc</p>
+                            </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+
+            <h2 class="popular-text" id="social">Social</h2>
+            <section class="main">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="card h-100">
+                            <img src="@item.LinkImage" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Title</h5>
+                                <p class="card-text">@item.Desc</p>
+                            </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
