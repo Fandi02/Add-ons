@@ -4,7 +4,7 @@ namespace Add.ons.Web.Services
 {
     public interface IAplikasiService
     {
-        List<AplikasiViewModel> GetAplikasis();
-        int Add(AplikasiViewModel request);
+        Task<List<AplikasiViewModel>> Read();
+        Task Write(Aplikasi request);
     }
 }

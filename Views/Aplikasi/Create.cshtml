@@ -1,4 +1,4 @@
-@model Add.ons.Web.Models.AplikasiViewModel
+@model Add.ons.Web.Models.Aplikasi
 
 @{
     ViewData["Title"] = "Create";
@@ -28,14 +28,9 @@
                 <span asp-validation-for="Desc" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TotalRating" class="control-label"></label>
-                <input asp-for="TotalRating" class="form-control" />
-                <span asp-validation-for="TotalRating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LinkImage" class="control-label"></label>
-                <input asp-for="LinkImage" class="form-control" />
-                <span asp-validation-for="LinkImage" class="text-danger"></span>
+                <label asp-for="TotalLike" class="control-label"></label>
+                <input asp-for="TotalLike" class="form-control" />
+                <span asp-validation-for="TotalLike" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

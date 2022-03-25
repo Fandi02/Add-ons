@@ -1,7 +1,15 @@
+#region Program.cs
+using Add.ons.Web.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IAplikasiService, AplikasiService>();
 builder.Services.AddControllersWithViews();
+
+#endregion
+
+#region Startup.cs
 
 var app = builder.Build();
 
@@ -25,3 +33,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+#endregion

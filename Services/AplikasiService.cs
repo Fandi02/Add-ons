@@ -4,32 +4,36 @@ namespace Add.ons.Web.Services
 {
     public class AplikasiService : IAplikasiService
     {
-        List<Aplikasi> _aplikasi;
-        public AplikasiService()
+        private const string FILE_NAME = "_databases.txt";
+        public async Task<List<AplikasiViewModel>> Read() 
         {
-            _aplikasi = new List<Aplikasi>
-            {
-                new Aplikasi(1, "Add ons", "Add ons for browser"),
-                new Aplikasi(2, "Add ons 1", "Add ons for browser"),
-                new Aplikasi(3, "Add ons 2", "Add ons for browser"),
-                new Aplikasi(4, "Add ons 2", "Add ons for browser"),
-            };
-        }
-        public int Add(AplikasiViewModel request)
-        {
-            throw new NotImplementedException();
-        }
+             if(!File.Exists(System.AppContext.BaseDirectory + FILE_NAME)){
+                return new List<AplikasiViewModel>();
+            }
+            var res = await File.ReadAllLinesAsync(System.AppContext.BaseDirectory + FILE_NAME);
+            if(res == null)
+                return new List<AplikasiViewModel>();
 
-        public List<AplikasiViewModel> GetAplikasis()
-        {
-            List<AplikasiViewModel> aplikasiViewModels = new List<AplikasiViewModel>();
-
-            foreach (var item in _aplikasi)
+            List<AplikasiViewModel> aplikasi = new List<AplikasiViewModel>();
+            foreach (var item in res)
             {
-                aplikasiViewModels.Add(new AplikasiViewModel(item.Id, item.Title, item.Title));
+                var dataSplit = item.Split(":").ToArray();
+                aplikasi.Add(new AplikasiViewModel(int.Parse(dataSplit[0]), dataSplit[1], dataSplit[2], int.Parse(dataSplit[3])));
             }
 
-            return aplikasiViewModels;
+            return aplikasi;
+        }
+
+        public async Task Write(Aplikasi request)
+        {
+            if(!File.Exists(System.AppContext.BaseDirectory + FILE_NAME)){
+                using (var fileStream = File.Create(System.AppContext.BaseDirectory + FILE_NAME)){
+                    fileStream.Close();
+                }
+            }
+            using(var fileStream = File.AppendText(System.AppContext.BaseDirectory + FILE_NAME)){
+                await fileStream.WriteLineAsync($"{request.Id};{request.Title};{request.Desc};{request.TotalLike}");
+            }
         }
     }
 }
