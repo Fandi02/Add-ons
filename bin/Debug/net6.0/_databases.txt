@@ -1,0 +1,2 @@
+1;Aplikasi;Aplikasi desc;90
+1;Aplikasi;A;90

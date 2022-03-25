@@ -17,7 +17,7 @@ namespace Add.ons.Web.Services
             List<AplikasiViewModel> aplikasi = new List<AplikasiViewModel>();
             foreach (var item in res)
             {
-                var dataSplit = item.Split(":").ToArray();
+                var dataSplit = item.Split(";").ToArray();
                 aplikasi.Add(new AplikasiViewModel(int.Parse(dataSplit[0]), dataSplit[1], dataSplit[2], int.Parse(dataSplit[3])));
             }
 

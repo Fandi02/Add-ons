@@ -18,7 +18,7 @@ namespace Add.ons.Web.Controllers
         public async Task<ActionResult> Index()
         {
             var data = await _aplikasiService.Read();
-
+            var result = System.IO.File.ReadAllLines("C:\\Alkademi.txt");
             
 
             return View(data);
@@ -32,14 +32,14 @@ namespace Add.ons.Web.Controllers
         // GET: AplikasiController/Create
         public ActionResult Create()
         {
-            return View(new AplikasiViewModel(1, "Aplikasi", "Aplikasi desc", 90));
+            return View(new Aplikasi(1, "Aplikasi", "Aplikasi desc", 90, "Link Image"));
         }
 
         // POST: AplikasiController/Create
         [HttpPost]
-        public ActionResult Create(int id, string judul, string desc, int totalLike)
+        public ActionResult Create(int id, string title, string desc, int totalLike, string linkImage)
         {
-            Aplikasi dataBaru = new Aplikasi(id, judul, desc, totalLike);
+            Aplikasi dataBaru = new Aplikasi(id, title, desc, totalLike, linkImage);
             _aplikasiService.Write(dataBaru);
                 return RedirectToAction("Index");
             
