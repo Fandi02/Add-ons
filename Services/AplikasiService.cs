@@ -18,7 +18,7 @@ namespace Add.ons.Web.Services
             foreach (var item in res)
             {
                 var dataSplit = item.Split(";").ToArray();
-                aplikasi.Add(new AplikasiViewModel(int.Parse(dataSplit[0]), dataSplit[1], dataSplit[2], int.Parse(dataSplit[3]), dataSplit[4]));
+                aplikasi.Add(new AplikasiViewModel(int.Parse(dataSplit[0]), dataSplit[1], dataSplit[2], int.Parse(dataSplit[3])));
             }
 
             return aplikasi;
@@ -32,7 +32,7 @@ namespace Add.ons.Web.Services
                 }
             }
             using(var fileStream = File.AppendText(System.AppContext.BaseDirectory + FILE_NAME)){
-                await fileStream.WriteLineAsync($"{request.Id};{request.Title};{request.Desc};{request.TotalLike};{request.LinkImage}");
+                await fileStream.WriteLineAsync($"{request.Id};{request.Title};{request.Desc};{request.TotalLike}");
             }
         }
     }
