@@ -18,7 +18,7 @@ namespace Add.ons.Web.Controllers
         public async Task<ActionResult> Index()
         {
             var data = await _aplikasiService.Read();
-            var result = System.IO.File.ReadAllLines("C:\\Alkademi.txt");
+            
             
 
             return View(data);

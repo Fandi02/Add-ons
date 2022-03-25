@@ -9,12 +9,14 @@ public class AplikasiViewModel
     public string Title { get; set; }
     public string Desc { get; set; }
     public int TotalLike { get; set; }
+    public string LinkImage { get; set; }
 
-    public AplikasiViewModel(int id, string title, string desc, int totalLike)
+    public AplikasiViewModel(int id, string title, string desc, int totalLike, string linkImage)
     {
         Id = id;
         Title = title;
         Desc = desc;
         TotalLike = totalLike;
+        LinkImage = linkImage;
     }
 }
